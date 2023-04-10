@@ -5,11 +5,12 @@ var ShoppingCart = require('./shoppingCart');
 var Product = require('./product');
 var Order = require('./order');
 var bcryptjs = require('bcryptjs');
+var config = require('./config')
 
 
 mongoose.Promise = global.Promise;
 
-var uri = 'mongodb://127.0.0.1/paintings-shop'
+var uri = config.mongodb_uri;
 var db = mongoose.connection;
 
 db.on('connecting', function(){console.log('Connecting to', uri);});

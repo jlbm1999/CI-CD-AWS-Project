@@ -10,6 +10,9 @@ var logger = require('morgan');
 // Import mongoose
 var mongoose = require('mongoose')
 
+// Import config
+var config = require('./config')
+
 var passport = require('passport');
 var passportJwt = require("passport-jwt");
 var JwtStrategy = passportJwt.Strategy;
@@ -21,7 +24,7 @@ var User = require('./model/user');
 const secretKey = 'your_jwt_secret';
 
 // Instantiate MongoDB connection
-const uri = 'mongodb://127.0.0.1/paintings-shop'
+const uri = config.mongodb_uri;
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 
