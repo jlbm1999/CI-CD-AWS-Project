@@ -5,7 +5,7 @@ var ShoppingCart = require('./shoppingCart');
 var Product = require('./product');
 var Order = require('./order');
 var bcryptjs = require('bcryptjs');
-var config = require('./config')
+var config = require('../config')
 
 
 mongoose.Promise = global.Promise;
